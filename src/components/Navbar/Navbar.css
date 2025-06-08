@@ -35,7 +35,7 @@
 }
 
 .navbar-menu a:hover {
-    color: tomato;
+    color: rgb(195, 0, 0);
 }
 
 .navbar-menu a::after {
@@ -116,8 +116,6 @@
     animation: pulse 1.5s infinite;
 }
 
-/* RESPONSIVE STYLES */
-
 @media (max-width: 1050px) {
     .navbar .logo {
         width: 140px;
@@ -156,7 +154,7 @@
     }
 
     .navbar-right img {
-        width: 20px;
+        width: 30px;
     }
 
     .navbar-right button {

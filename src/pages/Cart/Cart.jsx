@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import { StoreContext } from '../../context/StoreContext';
 import './Cart.css';
 import { assets } from '../../assets/assets'; // Make sure to import icons
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
-  const { cartItems, food_list, removeFromCart, addToCart, removeEntirelyFromCart } = useContext(StoreContext);
+  const { cartItems, food_list, removeFromCart, addToCart, removeEntirelyFromCart, getTotalCartAmount } = useContext(StoreContext);
+  const navigate = useNavigate();
 
   return (
     <div className='cart'>
@@ -28,7 +30,6 @@ const Cart = () => {
                   <p>{item.name}</p>
                   <p>${item.price}</p>
                   
-                  {/* Quantity controls */}
                   <div className="cart-quantity-control">
                     <img
                       src={assets.remove_icon_red}
@@ -54,6 +55,37 @@ const Cart = () => {
           }
           return null;
         })}
+      </div>
+      <div className="cart-bottom">
+        <div className="cart-total">
+          <h2>Cart Totals</h2>
+          <div>
+            <div className="cart-total-details">
+              <p>Subtotal</p>
+              <p>${getTotalCartAmount()}</p>
+            </div>
+            <hr />
+            <div className="cart-total-details">
+              <p>Delivery Fee</p>
+              <p>${getTotalCartAmount()===0?0:2}</p>
+            </div>
+            <hr />
+            <div className="cart-total-details">
+              <b>Total</b>
+              <b>${getTotalCartAmount()===0?0:getTotalCartAmount()+2}</b>
+            </div>
+          </div>
+          <button onClick={()=>navigate('/place-order')}>PROCEED TO CHECKOUT</button>
+        </div>
+        <div className="card-promocode">
+          <div>
+            <p>If you have a promo code, Enter here</p>
+            <div className="cart-promocode-input">
+              <input type="text" placeholder='Promo Code'/>
+              <button>Submit</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
