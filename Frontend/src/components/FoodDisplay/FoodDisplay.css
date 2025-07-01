@@ -1,0 +1,45 @@
+.food-display {
+  margin-top: 30px;
+}
+
+.food-display h2 {
+  font-size: max(2vw, 24px);
+  font-weight: 600;
+}
+
+.food-display-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  margin-top: 30px;
+  gap: 30px;
+  row-gap: 50px;
+}
+
+.food-item {
+  background-color: white;
+  border-radius: 12px;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+}
+
+.food-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 16px rgba(255, 99, 71, 0.5); /* Tomato shadow */
+}
+
+/*Dark Mode*/
+
+body.dark .food-display h2 {
+  color: #f0f0f0;
+}
+
+body.dark .food-item {
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+}
+
+body.dark .food-item:hover {
+  box-shadow: 0 0 16px rgba(255, 99, 71, 0.5); /* Tomato shadow for dark mode */
+}

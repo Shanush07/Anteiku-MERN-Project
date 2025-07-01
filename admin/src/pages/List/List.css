@@ -1,0 +1,121 @@
+.list {
+  width: 70%;
+  margin-left: max(5vw, 25px);
+  margin-top: 50px;
+  color: #444;
+  font-size: 16px;
+}
+
+.list > p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: tomato;
+}
+
+.list-table {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list-table-format {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 1fr 1fr 0.5fr;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: 0.3s;
+  background-color: #fff;
+}
+
+.list-table-format.title {
+  background-color: #fff3f0;
+  font-weight: bold;
+  color: tomato;
+  border: 1px solid tomato;
+}
+
+.list-table-format img {
+  width: 50px;
+  border-radius: 4px;
+}
+
+.cursor {
+  cursor: pointer;
+  font-weight: bold;
+  color: #ff2e2e;
+  transition: 0.2s;
+}
+
+.cursor:hover {
+  color: tomato;
+  transform: scale(1.2);
+}
+
+/*Dark Mode*/
+body.dark .list {
+  color: #ccc;
+}
+
+body.dark .list > p {
+  color: tomato;
+}
+
+body.dark .list-table-format {
+  background-color: #1e1e1e;
+  border-color: #333;
+  color: #ddd;
+}
+
+body.dark .list-table-format.title {
+  background-color: #2a2a2a;
+  color: tomato;
+  border-color: tomato;
+}
+
+body.dark .list-table-format img {
+  border: 1px solid #444;
+}
+
+body.dark .cursor {
+  color: #ff8080;
+}
+
+body.dark .cursor:hover {
+  color: tomato;
+}
+
+/*Responsive Design*/
+@media (max-width: 1024px) {
+  .list {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .list {
+    font-size: 14px;
+    padding: 0 16px;
+  }
+
+  .list-table-format {
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 15px;
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .list-table-format.title {
+    display: none;
+  }
+
+  .list-table-format img {
+    width: 40px;
+  }
+}

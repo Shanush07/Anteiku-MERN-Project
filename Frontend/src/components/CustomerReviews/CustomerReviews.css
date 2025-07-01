@@ -1,0 +1,141 @@
+.reviews-section {
+  padding: 40px 0;
+  background: #fefefe;
+}
+
+.reviews-heading {
+  font-size: max(2vw, 24px);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.reviews-slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.reviews-slider-track {
+  display: flex;
+  width: max-content;
+  animation: review-scroll-right 30s linear infinite; /* slowed down and reversed */
+}
+
+.reviews-slider-wrapper:hover .reviews-slider-track {
+  animation-play-state: paused;
+}
+
+.review-card {
+  flex: none;
+  width: 300px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  margin-right: 20px;
+  transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 12px 3px rgba(255, 99, 71, 0.5)
+}
+
+.review-text {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.review-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-profile img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #f08080;
+}
+
+.review-profile span {
+  font-weight: 600;
+  color: #222;
+}
+
+body.dark .reviews-section {
+  background: #121212;
+}
+
+body.dark .reviews-heading {
+  color: #f0f0f0;
+}
+
+body.dark .review-card {
+  background: #1e1e1e;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.05);
+}
+
+body.dark .review-card:hover {
+  box-shadow: 0 0 12px 3px rgba(255, 99, 71, 0.4);
+}
+
+body.dark .review-text {
+  color: #ddd;
+}
+
+body.dark .review-profile span {
+  color: #f0f0f0;
+}
+
+@media (max-width: 1024px) {
+  .review-card {
+    width: 260px;
+    padding: 18px;
+    margin-right: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .review-card {
+    width: 220px;
+    padding: 16px;
+    margin-right: 12px;
+  }
+
+  .review-text {
+    font-size: 14px;
+  }
+
+  .review-profile img {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 480px) {
+  .review-card {
+    width: 200px;
+    margin-right: 10px;
+  }
+
+  .reviews-heading {
+    font-size: 20px;
+  }
+}
+
+/* ✅ Reversed Keyframe (Rightward Scroll) */
+@keyframes review-scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
