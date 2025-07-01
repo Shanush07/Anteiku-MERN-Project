@@ -4,7 +4,7 @@ import Header from '../../components/Header/Header';
 import ExploreMenu from '../../components/ExploreMenu/ExploreMenu';
 import FoodDisplay from '../../components/FoodDisplay/FoodDisplay';
 import AppDownload from '../../components/AppDownload/AppDownload';
-import InfiniteTestimonials from '../../components/InfinteTestimonials/InfiniteTestimonials';
+import AwardsSlider from '../../components/AwardsSlider/AwardsSlider'
 import CustomerReviews from '../../components/CustomerReviews/CustomerReviews';
 
 const Home = () => {
@@ -17,7 +17,7 @@ const Home = () => {
       <FoodDisplay category={category} />
 
       <div id="achievements">
-        <InfiniteTestimonials />
+        <AwardsSlider />
       </div>
 
       <div id="customer-reviews">

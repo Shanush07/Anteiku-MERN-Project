@@ -1,5 +1,5 @@
 import React from 'react';
-import './InfiniteTestimonials.css';
+import './AwardsSlider.css';
 import { assets } from '../../assets/assets';
 
 const InfiniteTestimonials = () => {
