@@ -13,7 +13,12 @@ const port = 4000
 
 //middleware
 app.use(express.json())
-app.use(cors())
+//Updated CORS
+app.use(cors({
+  origin: "https://anteiku-frontend.onrender.com",
+  credentials: true
+}));
+
 
 //Database connection
 connectDB();
