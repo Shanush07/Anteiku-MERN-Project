@@ -95,6 +95,10 @@ body.dark .food-item:hover {
   box-shadow: 0 0 16px rgba(255, 99, 71, 0.5);
 }
 
+body.dark .food-item-counter p {
+  color: #000;
+}
+
 body.dark .food-item-desc {
   color: #ccc;
 }
