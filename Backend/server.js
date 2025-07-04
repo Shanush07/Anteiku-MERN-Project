@@ -13,9 +13,19 @@ const port = 4000
 
 //middleware
 app.use(express.json())
-//Updated CORS
+//Updated CORS v2
 app.use(cors({
-  origin: "https://anteiku-frontend.onrender.com",
+  origin: function (origin, callback) {
+    const allowedOrigins = [
+      'https://anteiku-frontend.onrender.com',
+      'https://anteiku-admin.onrender.com'
+    ];
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
 
